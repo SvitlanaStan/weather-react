@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="src/style.css" />
+    <title>Weather App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="weather-app-wrapper">
+        <div class="weather-app">
+          <h1>
+            <span id="temperature"> +18 </span>
+            <span id="tempType">
+              <a href="#" id="celsius-link" class="active"> °C </a>|
+              <a href="#" id="fahrenheit-link">°F </a></span
+            >
+            <img class="box" src="" alt="Clear" id="icon" class="float-left" />
+          </h1>
+          <div class="container text-center">
+            <div class="row align-items-start">
+              <div class="col">
+                <form id="search-form" class="row g-2">
+                  <div class="col-7">
+                    <input
+                      type="search"
+                      placeholder="Type a city"
+                      class="form-control"
+                      id="city-input"
+                      autocomplete="off"
+                    />
+                  </div>
+                  <div class="col">
+                    <button type="submit" class="btn btn-info CheckTemperarute">
+                      Search
+                    </button>
+                  </div>
+                </form>
+              </div>
+              <div class="col">
+                <ul class="current-weather">
+                  <li id="description">Clear</li>
+                  <li>Humidity <span id="humidity"> 10 </span> %</li>
+                  <li>Wind <span id="wind"> 10 </span> km/h</li>
+                </ul>
+              </div>
+              <ul class="current-data">
+                <li id="city">New York, USA</li>
+                <li id="date">Wednesday</li>
+                
+              </ul>
+            </div>
+          </div>
+          <h2>Next 5 Day Weather</h2>
+          <div>
+    <div class="weather-forecast" id="forecast"></div>
+    </div>
+    <br />
+        <small>
+          <a
+            href="https://github.com/SvitlanaStan/WeatherAppFinal.git"
+            target="_blank"
+            id="githubLink"
+          >
+            Open-source code, by Svitlana Stanislavchuk
+          </a></small
+        >
+      </div>
+    </div>
+  </body>
+  <script src="src/app.js"></script>
+</html>
