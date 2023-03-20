@@ -69,7 +69,7 @@ function App() {
         <br />
         <small>
           <a
-            href="https://github.com/SvitlanaStan/weather-react-app.git"
+            href="https://github.com/SvitlanaStan/weather-react.git"
             target="_blank"
             id="githubLink"
           >
