@@ -17,7 +17,13 @@ function App() {
               °F{" "}
             </a>
           </span>
-          <img class="box" src="" alt="Clear" id="icon" class="float-left" />
+          <img
+            class="box"
+            src=""
+            alt="Clear"
+            id="icon"
+            className="float-left"
+          />
         </h1>
         <div class="container text-center">
           <div class="row align-items-start">
