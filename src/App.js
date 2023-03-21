@@ -5,6 +5,7 @@ function App() {
   return (
     <div className="App">
       <div className="container">
+        <Weather />
         <div class="weather-app">
           <h1>
             <span id="temperature"> +18 </span>
