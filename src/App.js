@@ -7,7 +7,8 @@ function App() {
       <div className="container">
         <Weather />
         <div class="weather-app">
-          <h1>
+          <h1>New York, USA</h1>
+          <h2>
             <span id="temperature"> +18 </span>
             <span id="tempType">
               <a href="#" id="celsius-link" class="active">
@@ -26,7 +27,7 @@ function App() {
               id="icon"
               className="float-left"
             />
-          </h1>
+          </h2>
           <div class="container text-center">
             <div class="row align-items-start">
               <div class="col">
@@ -59,7 +60,6 @@ function App() {
                 </ul>
               </div>
               <ul class="current-data">
-                <li id="city">New York, USA</li>
                 <li id="date">Wednesday</li>
                 <li id="date">March 21, 2023</li>
               </ul>
