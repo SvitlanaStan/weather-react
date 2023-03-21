@@ -59,6 +59,7 @@ function App() {
             <ul class="current-data">
               <li id="city">New York, USA</li>
               <li id="date">Wednesday</li>
+              <li id="date">March 21, 2023</li>
             </ul>
           </div>
         </div>
