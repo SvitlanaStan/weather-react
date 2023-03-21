@@ -1,15 +1,13 @@
-.weather-app-wrapper {
+.Weather {
   margin: 30px auto;
   max-width: 600px;
-}
-.weather-app {
   padding: 20px;
   align-items: center;
   border: 1px solid #0dcaf0;
   border-radius: 10px;
 }
 
-.current-data {
+.li {
   text-align: left;
   color: #0ba7c6;
   font-size: 17px;
@@ -22,32 +20,30 @@
   font-family: "Roboto", sans-serif;
 }
 
-.form-control {
+/* .form-control {
   font-size: 14px;
   text-align: left;
 }
 .btn-info {
   font-size: 14px;
-}
+} */
 
 body {
   font-family: "Roboto", sans-serif;
   margin: auto;
 }
-h1 {
+h1,
+h2 {
   color: #0cbadd;
+  text-align: center;
   padding: 15px;
   font-size: 24px;
   font-weight: 600;
   line-height: 28px;
 }
+
 img {
   max-width: 50%;
-}
-h2 {
-  text-align: center;
-  padding: 20px;
-  color: #6b6767;
 }
 
 li {
@@ -58,13 +54,15 @@ li {
   text-transform: capitalize;
 }
 
-.App {
-  margin: 20px;
+footer {
+  text-align: center;
+  font-size: small;
 }
 
-#tempType {
+/* #tempType {
   font-weight: 400;
-}
+/* } */
+
 #githubLink {
   color: #0ba7c6;
   text-decoration: none;
@@ -73,7 +71,7 @@ li {
 #city-input {
   font-size: 15px;
 }
-#fahrenheit-link {
+*/ #fahrenheit-link {
   color: #0cbadd;
   text-decoration: none;
 }
@@ -89,8 +87,8 @@ li {
 #celsius-link:hover {
   text-decoration: underline;
 }
-#forecast {
+/* #forecast {
   color: #878787;
   padding: 15px;
   text-align: center;
-}
+} */
