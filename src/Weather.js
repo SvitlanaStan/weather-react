@@ -4,7 +4,6 @@ import "./Weather.css";
 export default function Weather() {
   return (
     <div className="Weather">
-      {" "}
       <h1>New York, USA</h1>
       <h2>
         <span> +18 </span>
@@ -20,34 +19,31 @@ export default function Weather() {
         </span>
         <img class="box" src="" alt="Clear" id="icon" className="float-left" />
       </h2>
+      <form>
+        <div className="row">
+          <div className="col-9">
+            <input
+              type="search"
+              placeholder="Enter a city"
+              className="form-control"
+            />
+          </div>
+          <div className="col-3">
+            <input type="submit" value="Search" className="btn btn-primary" />
+          </div>
+        </div>
+      </form>
       <div class="container text-center">
         <div class="row align-items-start">
-          <div class="col">
-            <form id="search-form" class="row g-2">
-              <div class="col-7">
-                <input
-                  type="search"
-                  placeholder="Type a city"
-                  class="form-control"
-                  id="city-input"
-                  autocomplete="off"
-                />
-              </div>
-              <div class="col">
-                <button type="submit" class="btn btn-info CheckTemperarute">
-                  Search
-                </button>
-              </div>
-            </form>
-          </div>
+          <div class="col"></div>
           <div className="col">
             <ul className="current-weather">
-              <li>Clear</li>
+              <li>Precipitation:</li>
               <li>
-                Humidity <span> 10 </span> %
+                Humidity: <span> 10 </span> %
               </li>
               <li>
-                Wind <span> 10 </span> km/h
+                Wind: <span> 10 </span> km/h
               </li>
             </ul>
           </div>
@@ -57,7 +53,7 @@ export default function Weather() {
           </ul>
         </div>
       </div>
-      <h2>Next 5 Day Weather</h2>
+      <h3>Next 5 Day Weather</h3>
       <div>
         <div className="weather-forecast" id="forecast"></div>
       </div>
