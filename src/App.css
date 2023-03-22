@@ -4,8 +4,15 @@
 }
 
 .App footer {
+  text-align: center;
+  font-size: small;
   font-size: 12px;
   margin: 10px 0;
   color: #878787;
   font-family: "Roboto", sans-serif;
+}
+.App a {
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  color: #0cbadd;
 }
