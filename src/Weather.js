@@ -1,62 +1,72 @@
-import React from "react";
+import React, { useState } from "react";
+import WeatherInfo from "./WeatherInfo";
+// import WeatherForecast from "./WeatherForecast";
+import axios from "axios";
 import "./Weather.css";
 import "bootstrap/dist/css/bootstrap.css";
 
-export default function Weather() {
-  return (
-    <div className="Weather">
-      <div className="col-6">
-        <ul className="current-data">
-          <li>Wednesday</li>
-          <li>March 21, 2023</li>
-        </ul>
-      </div>
-      <form>
-        <div className="row">
-          <div className="col-9">
-            <input
-              type="search"
-              placeholder="Enter a city"
-              className="form-control"
-              autoFocus="on"
-            />
-          </div>
-          <div className="col-3">
-            <input type="submit" value="Search" className="btn btn-info" />
-          </div>
-        </div>
-      </form>
-      <h1>New York, USA</h1>
-      <h2>
-        <span> +18 </span>
-        <span>
-          <a href="#" id="celsius-link" class="active">
-            {" "}
-            °C{" "}
-          </a>
-          |
-          <a href="#" id="fahrenheit-link">
-            °F{" "}
-          </a>
-        </span>
-        <img class="box" src="" alt="Clear" id="icon" className="float-left" />
-      </h2>
+export default function Weather(props) {
+  const [weatherData, setWeatherData] = useState({ ready: false });
+  const [city, setCity] = useState(props.defaultCity);
 
-      <div className="container text-center current-weather">
-        <div className="row align-items-center">
-          <div className="col">Precipitation:</div>
-          <div className="col">
-            Humidity: <span> 10 </span> %
+  function handleResponse(response) {
+    setWeatherData({
+      ready: true,
+      coordinates: response.data.coord,
+      temperature: response.data.main.temp,
+      humidity: response.data.main.humidity,
+      date: new Date(response.data.dt * 1000),
+      description: response.data.weather[0].description,
+      icon: response.data.weather[0].icon,
+      wind: response.data.wind.speed,
+      city: response.data.name,
+    });
+  }
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
+  }
+
+  function handleCityChange(event) {
+    setCity(event.target.value);
+  }
+
+  function search() {
+    const apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleResponse);
+  }
+
+  if (weatherData.ready) {
+    return (
+      <div className="Weather">
+        <WeatherInfo data={weatherData} />
+        <form onSubmit={handleSubmit}>
+          <div className="row">
+            <div className="col-9">
+              <input
+                type="search"
+                placeholder="Enter a city"
+                className="form-control"
+                autoFocus="on"
+                onChange={handleCityChange}
+              />
+            </div>
+            <div className="col-3">
+              <input type="submit" value="Search" className="btn btn-info" />
+            </div>
           </div>
-          <div className="col">
-            Wind: <span> 10 </span> km/h
-          </div>
+        </form>
+
+        {/* <WeatherForecast coordinates={weatherData.coordinates} />; */}
+        <h3>Next 5 Day Weather</h3>
+        <div>
+          <div className="weather-forecast" id="forecast"></div>
         </div>
       </div>
-      <h3>Next 5 Day Weather</h3>
-      <div>
-        <div className="weather-forecast" id="forecast"></div>
-      </div>
-    </div>
-  );
+    );
+  } else {
+    search();
+    return "Loading...";
+  }
 }
