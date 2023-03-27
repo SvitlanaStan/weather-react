@@ -17,9 +17,10 @@ export default function WeatherInfo(props) {
           <li>{props.data.description}</li>
         </ul>
       </div>
-      <div className="row mt-3">
-        <div className="col-6">
-          <div className="d-flex">
+
+      <div className="container text-center current-weather">
+        <div className="row align-items-center">
+          <div className="col d-flex">
             <div>
               <WeatherIcon code={props.data.icon} size={52} />
             </div>
@@ -27,16 +28,10 @@ export default function WeatherInfo(props) {
             <div>
               <WeatherTemperature celsius={props.data.temperature} />
             </div>
-          </div>
-        </div>
-
-        <div className="container text-center current-weather">
-          <div className="row align-items-center">
             <div className="col">
-              Precipitation: {props.data.precipitation} km/h %
+              <div>Humidity: {props.data.humidity}%</div>
+              <div>Wind: {props.data.wind} km/h</div>
             </div>
-            <div className="col">Humidity: {props.data.humidity}%</div>
-            <div className="col">Wind: {props.data.wind} km/h</div>
           </div>
         </div>
       </div>

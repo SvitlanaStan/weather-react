@@ -19,7 +19,6 @@
 
 .Weather h1,
 h2 {
-  text-align: left;
   font-size: 24px;
   font-weight: 600;
   padding-top: 10px;
@@ -34,6 +33,7 @@ h2 {
 .Weather li {
   list-style: none;
   text-transform: capitalize;
+  text-align: left;
 }
 
 .Weather form {
@@ -59,6 +59,7 @@ h2 {
 .Weather .current-weather {
   margin-top: 10px;
   margin-bottom: 30px;
+  margin-left: 30px;
   font-size: 14px;
   color: var(--text-color);
 }

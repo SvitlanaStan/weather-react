@@ -40,7 +40,6 @@ export default function Weather(props) {
   if (weatherData.ready) {
     return (
       <div className="Weather">
-        <WeatherInfo data={weatherData} />
         <form onSubmit={handleSubmit}>
           <div className="row">
             <div className="col-9">
@@ -57,6 +56,7 @@ export default function Weather(props) {
             </div>
           </div>
         </form>
+        <WeatherInfo data={weatherData} />
 
         {/* <WeatherForecast coordinates={weatherData.coordinates} />; */}
         <h3>Next 5 Day Weather</h3>
