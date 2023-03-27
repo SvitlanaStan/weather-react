@@ -1,3 +1,10 @@
+:root {
+  --primary-color: #0dcaf0;
+  /* --secondary-color: ; */
+  --text-color: #878787;
+  /* --background-color: #f8fcfb; */
+}
+
 .App {
   max-width: 600px;
   margin: 30px auto;
@@ -8,11 +15,11 @@
   font-size: small;
   font-size: 12px;
   margin: 10px 0;
-  color: #878787;
+  color: var(--text-color);
   font-family: "Roboto", sans-serif;
 }
 .App a {
   text-decoration: none;
   font-family: "Roboto", sans-serif;
-  color: #0cbadd;
+  color: var(--primary-color);
 }

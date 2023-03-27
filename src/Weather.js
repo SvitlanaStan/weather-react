@@ -5,6 +5,27 @@ import "bootstrap/dist/css/bootstrap.css";
 export default function Weather() {
   return (
     <div className="Weather">
+      <div className="col-6">
+        <ul className="current-data">
+          <li>Wednesday</li>
+          <li>March 21, 2023</li>
+        </ul>
+      </div>
+      <form>
+        <div className="row">
+          <div className="col-9">
+            <input
+              type="search"
+              placeholder="Enter a city"
+              className="form-control"
+              autoFocus="on"
+            />
+          </div>
+          <div className="col-3">
+            <input type="submit" value="Search" className="btn btn-info" />
+          </div>
+        </div>
+      </form>
       <h1>New York, USA</h1>
       <h2>
         <span> +18 </span>
@@ -20,40 +41,16 @@ export default function Weather() {
         </span>
         <img class="box" src="" alt="Clear" id="icon" className="float-left" />
       </h2>
-      <form>
-        <div className="row">
-          <div className="col-9">
-            <input
-              type="search"
-              placeholder="Enter a city"
-              className="form-control"
-              autoFocus="on"
-            />
-          </div>
 
-          <div className="col-3">
-            <input type="submit" value="Search" className="btn btn-info" />
-          </div>
-        </div>
-      </form>
-      <div class="container text-center">
-        <div class="row align-items-start">
-          <div class="col"></div>
+      <div className="container text-center current-weather">
+        <div className="row align-items-center">
+          <div className="col">Precipitation:</div>
           <div className="col">
-            <ul className="current-weather">
-              <li>Precipitation:</li>
-              <li>
-                Humidity: <span> 10 </span> %
-              </li>
-              <li>
-                Wind: <span> 10 </span> km/h
-              </li>
-            </ul>
+            Humidity: <span> 10 </span> %
           </div>
-          <ul className="current-data">
-            <li>Wednesday</li>
-            <li>March 21, 2023</li>
-          </ul>
+          <div className="col">
+            Wind: <span> 10 </span> km/h
+          </div>
         </div>
       </div>
       <h3>Next 5 Day Weather</h3>
